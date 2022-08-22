@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cupy-cuda112 = "==9.1.0"
+numpy = "==1.20.2"
+opencv-contrib-python = "==4.5.2.52"
+oyaml = "==1.0"
+torch = "==1.7.1"
+torchvision = "==0.8.2"
+tqdm = "*"
+tensorboard = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
