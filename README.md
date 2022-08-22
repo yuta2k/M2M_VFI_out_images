@@ -32,6 +32,19 @@ see [TEST_README.md](./Test/README.md)
 
 see [TRAIN_README.md](./Train/README.md)
 
+### Interpolation
+
+This fork can batch frame interpolation from multiple image files.  
+Please refer to [TEST_README.md](./Test/README.md) to complete the `Preparation` beforehand.
+
+```
+cd Test
+python interpolation.py --src /path/to/src_dir --dst /path/to/dst_dir
+```
+
+If you want to use a factor other than 2, specify option `--factor` .  
+(Ex. if you want 30fps to 120fps, specify `--factor 4` )
+
 ### Citation
 If you find M2M is helpful in your research, please consider citing:
 
