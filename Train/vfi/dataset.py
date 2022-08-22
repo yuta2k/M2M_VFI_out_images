@@ -177,7 +177,7 @@ class VimeoDataset(Dataset):
         for line in open(os.path.join(self.dataset_path,list_name)): 
             if not os.path.exists(os.path.join(self.dataset_path,'sequences',line.strip('\n'),'im1.png')):
                 print(line) 
-                pdb.set_trace()            
+                # pdb.set_trace()            
             # end            
             list_.append(line.strip('\n'))
         # end
