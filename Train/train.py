@@ -162,8 +162,12 @@ def evaluate(solver, val_data, step, local_rank, writer_val):
         loss_tt_list.append(output['lossttl'].cpu().numpy())
 
         for j in range(gt.shape[0]):
-            psnr = -10 * math.log10(torch.mean((gt[j] - pred[j]) * (gt[j] - pred[j])).cpu().data)
-            psnr_list.append(psnr)
+            curr_psnr_no_log = torch.mean((gt[j] - pred[j]) * (gt[j] - pred[j])).cpu().data
+            if curr_psnr_no_log > 0.0:
+                psnr = -10 * math.log10(curr_psnr_no_log)
+                psnr_list.append(psnr)
+            else:
+                psnr_list.append(0.0)
         #end
 
         gt = (gt.permute(0, 2, 3, 1).cpu().numpy() * 255).astype('uint8')
